@@ -1,0 +1,900 @@
+/* ==========================================================================
+   PORTFOLIO TASKIQ — HOJA DE ESTILOS PRINCIPAL
+   Tecnología Inteligente para PyMEs y Emprendedores
+   ========================================================================== */
+
+/* ==========================================================================
+   1. VARIABLES DE IDENTIDAD VISUAL (FÁCILMENTE EDITABLES)
+   Modifica aquí los códigos hexadecimales para ajustar colores en todo el sitio.
+   ========================================================================== */
+:root {
+  /* --- PALETA DE MARCA (VERDE PETRÓLEO Y ACENTOS) --- */
+  --brand-petrol-dark: #134e57;     /* Verde petróleo profundo (principal para botones y contrastes) */
+  --brand-petrol-primary: #175c66;  /* Verde petróleo medio institucional */
+  --brand-petrol-hover: #0d383e;    /* Verde petróleo oscuro para estados hover */
+  --brand-teal-accent: #2ba293;     /* Acento verde agua / teal para detalles sutiles */
+  --brand-teal-light: #edf7f6;      /* Fondo suave para etiquetas, badges y áreas destacadas */
+  --brand-teal-border: #c8e8e4;     /* Borde suave en tono petróleo claro */
+
+  /* --- FONDOS Y SUPERFICIES --- */
+  --bg-page: #fafaf9;               /* Blanco cálido editorial para el fondo general */
+  --bg-surface: #ffffff;            /* Blanco puro para tarjetas y contenedores */
+  --bg-subtle: #f4f4f5;             /* Gris neutro muy claro para separadores */
+
+  /* --- TEXTOS Y TIPOGRAFÍA --- */
+  --text-primary: #18181b;          /* Gris carbón casi negro para títulos y máxima legibilidad */
+  --text-secondary: #475569;        /* Gris pizarra para párrafos y descripciones */
+  --text-muted: #64748b;            /* Gris medio para metadatos, etiquetas y pies de página */
+
+  /* --- BORDES Y SOMBRAS SUAVES --- */
+  --border-subtle: #e4e4e7;         /* Borde sutil para tarjetas y divisores */
+  --border-card-hover: #175c66;     /* Borde al pasar el cursor sobre proyectos */
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.04);
+  --shadow-card: 0 2px 8px rgba(19, 78, 87, 0.04), 0 1px 3px rgba(0, 0, 0, 0.03);
+  --shadow-card-hover: 0 12px 28px rgba(19, 78, 87, 0.09), 0 4px 10px rgba(0, 0, 0, 0.04);
+
+  /* --- RADIOS Y TRANSICIONES --- */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+  --radius-full: 9999px;
+  --transition-fast: 0.18s ease;
+  --transition-normal: 0.25s ease;
+
+  /* --- TIPOGRAFÍA BASE --- */
+  --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+/* ==========================================================================
+   2. REINICIO Y ESTILOS BASE
+   ========================================================================== */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--bg-page);
+  color: var(--text-primary);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+img, svg {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+.container {
+  width: 100%;
+  max-width: 1140px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+/* ==========================================================================
+   3. BARRA DE NAVEGACIÓN (HEADER)
+   ========================================================================== */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: rgba(250, 250, 249, 0.92);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--border-subtle);
+  transition: border-color var(--transition-fast);
+}
+
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 72px;
+}
+
+.brand-link {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  transition: opacity var(--transition-fast);
+}
+
+.brand-link:hover {
+  opacity: 0.9;
+}
+
+.brand-logo-img {
+  width: 36px;
+  height: 36px;
+  object-fit: contain;
+  border-radius: var(--radius-sm);
+}
+
+.brand-text-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.brand-name {
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--brand-petrol-dark);
+  line-height: 1.1;
+}
+
+.brand-tagline {
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  letter-spacing: 0.01em;
+}
+
+.site-nav {
+  display: flex;
+  align-items: center;
+}
+
+.nav-list {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  gap: 1.75rem;
+}
+
+.nav-link {
+  font-size: 0.9375rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  transition: color var(--transition-fast);
+}
+
+.nav-link:hover {
+  color: var(--brand-petrol-primary);
+}
+
+/* ==========================================================================
+   4. BOTONES COMUNES
+   ========================================================================== */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.875rem 1.625rem;
+  border-radius: var(--radius-md);
+  font-size: 0.9375rem;
+  font-weight: 600;
+  line-height: 1;
+  transition: all var(--transition-fast);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.btn-primary {
+  background-color: var(--brand-petrol-dark);
+  color: #ffffff;
+  border: 1px solid var(--brand-petrol-dark);
+  box-shadow: 0 2px 6px rgba(19, 78, 87, 0.18);
+}
+
+.btn-primary:hover {
+  background-color: var(--brand-petrol-hover);
+  border-color: var(--brand-petrol-hover);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(19, 78, 87, 0.24);
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: var(--brand-petrol-dark);
+  border: 1px solid var(--border-subtle);
+  background-color: #ffffff;
+}
+
+.btn-secondary:hover {
+  border-color: var(--brand-petrol-primary);
+  color: var(--brand-petrol-hover);
+  background-color: var(--brand-teal-light);
+  transform: translateY(-1px);
+}
+
+.btn-sm {
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+}
+
+.btn-petrol {
+  background-color: var(--brand-petrol-dark);
+  color: #ffffff;
+}
+
+.btn-petrol:hover {
+  background-color: var(--brand-petrol-hover);
+}
+
+.btn-subtle {
+  background-color: #f1f5f9;
+  color: var(--text-secondary);
+  border: 1px solid var(--border-subtle);
+}
+
+.btn-subtle:hover {
+  background-color: #e2e8f0;
+  color: var(--text-primary);
+}
+
+.btn-icon {
+  width: 16px;
+  height: 16px;
+}
+
+/* ==========================================================================
+   5. SECCIÓN HERO (CABECERA)
+   ========================================================================== */
+.hero-section {
+  padding-top: 5rem;
+  padding-bottom: 5.5rem;
+  border-bottom: 1px solid var(--border-subtle);
+  background: radial-gradient(circle at 80% 20%, rgba(200, 232, 228, 0.35) 0%, transparent 60%);
+}
+
+.hero-container {
+  max-width: 860px;
+}
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.35rem 0.85rem;
+  background-color: var(--brand-teal-light);
+  border: 1px solid var(--brand-teal-border);
+  border-radius: var(--radius-full);
+  margin-bottom: 1.75rem;
+}
+
+.badge-dot {
+  width: 8px;
+  height: 8px;
+  background-color: var(--brand-teal-accent);
+  border-radius: 50%;
+}
+
+.badge-text {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--brand-petrol-dark);
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+.hero-title {
+  font-size: 3rem;
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.03em;
+  color: var(--text-primary);
+  margin-bottom: 1.5rem;
+}
+
+.hero-description {
+  font-size: 1.1875rem;
+  line-height: 1.65;
+  color: var(--text-secondary);
+  margin-bottom: 1.5rem;
+  max-width: 760px;
+}
+
+.hero-meta {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  margin-bottom: 2.25rem;
+}
+
+.location-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.icon-location {
+  width: 16px;
+  height: 16px;
+  color: var(--brand-petrol-primary);
+}
+
+.hero-actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+/* ==========================================================================
+   6. SECCIÓN GALERÍA DE PROYECTOS
+   ========================================================================== */
+.projects-section {
+  padding-top: 5.5rem;
+  padding-bottom: 6rem;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.section-header {
+  margin-bottom: 3.5rem;
+  max-width: 720px;
+}
+
+.section-title {
+  font-size: 2.125rem;
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  color: var(--text-primary);
+  margin-bottom: 0.85rem;
+}
+
+.section-subtitle {
+  font-size: 1.125rem;
+  line-height: 1.6;
+  color: var(--text-secondary);
+}
+
+/* Cuadrícula de proyectos: 2 columnas en desktop */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+}
+
+.project-card {
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-card);
+  display: flex;
+  flex-direction: column;
+  transition: transform var(--transition-normal), box-shadow var(--transition-normal), border-color var(--transition-normal);
+}
+
+.project-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-card-hover);
+  border-color: var(--border-card-hover);
+}
+
+/* Espacio visual amplio para futuras imágenes o capturas */
+.project-visual {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9.5;
+  background-color: #f1f5f7;
+  overflow: hidden;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+/* Si se coloca una etiqueta <img> real en el proyecto */
+.project-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-normal);
+}
+
+.project-card:hover .project-img {
+  transform: scale(1.02);
+}
+
+/* Placeholder elegante con fondo de color y tipografía */
+.visual-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  text-align: center;
+  position: relative;
+  transition: background-color var(--transition-normal);
+}
+
+/* Variaciones de fondo sutiles con tono verde petróleo */
+.placeholder-agenda {
+  background: linear-gradient(135deg, #ebf5f5 0%, #dff0ee 100%);
+}
+
+.placeholder-catalogo {
+  background: linear-gradient(135deg, #f0f7f7 0%, #e2f1ef 100%);
+}
+
+.placeholder-viajes {
+  background: linear-gradient(135deg, #eaf4f5 0%, #dbeeed 100%);
+}
+
+.placeholder-alquileres {
+  background: linear-gradient(135deg, #edf6f5 0%, #e4f3f1 100%);
+}
+
+.placeholder-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  max-width: 85%;
+}
+
+.placeholder-icon-wrap {
+  width: 52px;
+  height: 52px;
+  border-radius: var(--radius-md);
+  background-color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--brand-petrol-primary);
+  box-shadow: var(--shadow-sm);
+  margin-bottom: 0.25rem;
+}
+
+.placeholder-icon {
+  width: 28px;
+  height: 28px;
+}
+
+.placeholder-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--brand-petrol-dark);
+  letter-spacing: -0.01em;
+}
+
+.placeholder-sub {
+  font-size: 0.8125rem;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+/* Cuerpo de la tarjeta */
+.project-body {
+  padding: 1.75rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.project-header-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-bottom: 0.85rem;
+}
+
+.category-tag {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--brand-petrol-primary);
+  letter-spacing: 0.01em;
+}
+
+.status-badge {
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.25rem 0.6rem;
+  border-radius: var(--radius-full);
+}
+
+.status-dev {
+  background-color: #fef3c7;
+  color: #92400e;
+  border: 1px solid #fde68a;
+}
+
+.project-title {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  letter-spacing: -0.02em;
+  margin-bottom: 0.5rem;
+}
+
+/* Nombre comercial tentativo editable */
+.commercial-note {
+  font-size: 0.8125rem;
+  color: var(--text-muted);
+  margin-bottom: 0.6rem;
+}
+
+.commercial-note strong {
+  color: var(--brand-petrol-dark);
+  font-weight: 600;
+}
+
+.project-text {
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  color: var(--text-secondary);
+  margin-bottom: 1.75rem;
+  flex-grow: 1;
+}
+
+.project-actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: auto;
+  padding-top: 1rem;
+  border-top: 1px solid #f1f5f9;
+}
+
+.btn-project {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.65rem 1.15rem;
+  border-radius: var(--radius-md);
+  font-size: 0.875rem;
+  font-weight: 600;
+  line-height: 1;
+  transition: all var(--transition-fast);
+}
+
+.btn-project-primary {
+  background-color: var(--brand-petrol-dark);
+  color: #ffffff;
+}
+
+.btn-project-primary:hover {
+  background-color: var(--brand-petrol-hover);
+  transform: translateX(2px);
+}
+
+.btn-project-secondary {
+  background-color: #f8fafc;
+  color: var(--brand-petrol-dark);
+  border: 1px solid var(--border-subtle);
+}
+
+.btn-project-secondary:hover {
+  background-color: var(--brand-teal-light);
+  border-color: var(--brand-teal-border);
+  color: var(--brand-petrol-hover);
+  transform: translateX(2px);
+}
+
+.btn-project-outline {
+  background-color: transparent;
+  color: var(--brand-petrol-dark);
+  border: 1px solid var(--border-subtle);
+}
+
+.btn-project-outline:hover {
+  background-color: #f1f5f9;
+}
+
+.icon-external, .icon-arrow {
+  width: 14px;
+  height: 14px;
+}
+
+/* ==========================================================================
+   7. SECCIÓN CONTACTO DIRECTO
+   ========================================================================== */
+.contact-section {
+  padding-top: 5.5rem;
+  padding-bottom: 6rem;
+  background-color: #ffffff;
+}
+
+.contact-container {
+  max-width: 860px;
+}
+
+.contact-header {
+  text-align: center;
+  margin-bottom: 3.5rem;
+}
+
+.contact-title {
+  font-size: 2.125rem;
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  color: var(--text-primary);
+  margin-bottom: 0.85rem;
+}
+
+.contact-subtitle {
+  font-size: 1.125rem;
+  color: var(--text-secondary);
+  max-width: 580px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.contact-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 1.15rem;
+}
+
+.contact-card {
+  display: flex;
+  align-items: center;
+  background-color: var(--bg-page);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: 1.25rem 1.5rem;
+  transition: all var(--transition-fast);
+}
+
+.contact-card-highlight {
+  border-color: var(--brand-teal-border);
+  background-color: #f8fcfa;
+}
+
+.contact-card-link:hover {
+  border-color: var(--brand-petrol-primary);
+  background-color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-sm);
+}
+
+.contact-card-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-md);
+  background-color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--brand-petrol-dark);
+  border: 1px solid var(--border-subtle);
+  margin-right: 1.25rem;
+  flex-shrink: 0;
+}
+
+.contact-card-icon svg {
+  width: 22px;
+  height: 22px;
+}
+
+.contact-card-info {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.contact-label {
+  font-size: 0.78125rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  color: var(--text-muted);
+  margin-bottom: 0.2rem;
+}
+
+.contact-value {
+  font-size: 1.0625rem;
+  font-weight: 600;
+  color: var(--brand-petrol-dark);
+  text-decoration: none;
+}
+
+.contact-email-link:hover {
+  text-decoration: underline;
+}
+
+.contact-card-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.contact-card-arrow {
+  color: var(--text-muted);
+  transition: transform var(--transition-fast), color var(--transition-fast);
+}
+
+.contact-card-arrow svg {
+  width: 18px;
+  height: 18px;
+}
+
+.contact-card-link:hover .contact-card-arrow {
+  transform: translateX(4px);
+  color: var(--brand-petrol-dark);
+}
+
+.icon-copy {
+  width: 14px;
+  height: 14px;
+}
+
+/* ==========================================================================
+   8. PIE DE PÁGINA (FOOTER)
+   ========================================================================== */
+.site-footer {
+  background-color: var(--bg-page);
+  border-top: 1px solid var(--border-subtle);
+  padding-top: 2.25rem;
+  padding-bottom: 2.25rem;
+}
+
+.footer-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.footer-copy {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+}
+
+.footer-copy strong {
+  color: var(--brand-petrol-dark);
+  font-weight: 600;
+}
+
+.footer-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.8125rem;
+  color: var(--text-muted);
+}
+
+.footer-divider {
+  color: var(--border-subtle);
+}
+
+/* ==========================================================================
+   9. MENSAJE FLOTANTE (TOAST)
+   ========================================================================== */
+.toast-message {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  background-color: var(--brand-petrol-dark);
+  color: #ffffff;
+  padding: 0.75rem 1.25rem;
+  border-radius: var(--radius-md);
+  font-size: 0.875rem;
+  font-weight: 600;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.16);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(12px);
+  transition: all 0.22s ease;
+  z-index: 1000;
+}
+
+.toast-message.toast-visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+/* ==========================================================================
+   10. MEDIA QUERIES (RESPONSIVE DESIGN)
+   ========================================================================== */
+@media (max-width: 900px) {
+  .hero-title {
+    font-size: 2.375rem;
+  }
+  
+  .projects-grid {
+    grid-template-columns: 1fr;
+    max-width: 620px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@media (max-width: 640px) {
+  .header-container {
+    height: 64px;
+  }
+
+  .nav-list {
+    gap: 1rem;
+  }
+
+  .brand-tagline {
+    display: none;
+  }
+
+  .hero-section {
+    padding-top: 3.5rem;
+    padding-bottom: 4rem;
+  }
+
+  .hero-title {
+    font-size: 1.875rem;
+    line-height: 1.2;
+  }
+
+  .hero-description {
+    font-size: 1.05rem;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .hero-actions .btn {
+    width: 100%;
+  }
+
+  .projects-section {
+    padding-top: 4rem;
+    padding-bottom: 4.5rem;
+  }
+
+  .section-title, .contact-title {
+    font-size: 1.75rem;
+  }
+
+  .project-body {
+    padding: 1.35rem;
+  }
+
+  .contact-section {
+    padding-top: 4rem;
+    padding-bottom: 4.5rem;
+  }
+
+  .contact-card {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1.25rem;
+  }
+
+  .contact-card-actions {
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  .contact-card-arrow {
+    display: none;
+  }
+
+  .footer-container {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+}

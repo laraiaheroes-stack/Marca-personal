@@ -1,0 +1,19 @@
+# Dependencias
+node_modules/
+
+# Archivos de entorno y credenciales
+.env
+.env.*
+*.env
+*.pem
+*.key
+
+# Archivos del sistema y logs
+.DS_Store
+Thumbs.db
+desktop.ini
+*.log
+
+# Temporales de editores
+.vscode/
+.idea/
