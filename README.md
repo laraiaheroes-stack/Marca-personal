@@ -18,7 +18,8 @@ Pagina Personal/
 ├── main.js           # Desplazamiento suave, copiado seguro de email y año dinámico
 ├── assets/
 │   ├── logo-taskiq-icon.png   # Isotipo oficial de TaskIQ
-│   └── logo-taskiq-full.jpg   # Logotipo oficial completo de TaskIQ
+│   ├── logo-taskiq-full.jpg   # Logotipo oficial completo de TaskIQ
+│   └── logo-agendaiq.png      # Logo oficial de AgendaIQ
 └── README.md         # Esta guía de uso y personalización
 ```
 
