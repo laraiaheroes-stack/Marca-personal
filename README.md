@@ -22,7 +22,8 @@ Pagina Personal/
 ├── assets/
 │   ├── logo-taskiq-icon.png   # Isotipo oficial de TaskIQ
 │   ├── logo-taskiq-full.jpg   # Logotipo oficial completo de TaskIQ
-│   └── logo-agendaiq.png      # Logo oficial de AgendaIQ
+│   ├── logo-agendaiq.png      # Logo oficial de AgendaIQ
+│   └── logo-catalogoiq.jpg    # Logo oficial de catalogoIQ
 └── README.md         # Esta guía de uso y personalización
 ```
 
