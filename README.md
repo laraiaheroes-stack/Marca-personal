@@ -7,6 +7,9 @@ Pagina para mostrar mis trabajos personales
 
 Sitio web portfolio para presentar las soluciones desarrolladas por **TaskIQ** (consultoría de tecnología inteligente para PyMEs y emprendedores en Rosario y región, Santa Fe, Argentina).
 
+- 🌐 **Sitio Web Oficial:** [https://studio.taskiqai.com/](https://studio.taskiqai.com/)
+- 📦 **Despliegue Cloudflare Pages:** `https://marca-personal-cm8.pages.dev/`
+
 ---
 
 ## 📁 Estructura del Proyecto
