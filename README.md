@@ -27,7 +27,11 @@ Pagina Personal/
 │   ├── logo-costosiq-symbol.png # Logo oficial de CostosIQ (optimizado)
 │   ├── logo-costosiq-withtext.png # Logo con texto de CostosIQ (optimizado)
 │   ├── CostosIQ_AppIcon_Final_SymbolOnly.png # Recurso gráfico original (alta resolución)
-│   └── CostosIQ_AppIcon_Final_WithText.png   # Recurso gráfico original (alta resolución)
+│   ├── CostosIQ_AppIcon_Final_WithText.png   # Recurso gráfico original (alta resolución)
+│   ├── logo-viajesiq-symbol.png # Logo oficial de ViajesIQ (optimizado)
+│   ├── logo-viajesiq-withtext.png # Logo con texto de ViajesIQ (optimizado)
+│   ├── viajesIQ_AppIcon_Creative_SymbolOnly.png # Recurso gráfico original (alta resolución)
+│   └── viajesIQ_AppIcon_Creative_WithText.png   # Recurso gráfico original (alta resolución)
 └── README.md         # Esta guía de uso y personalización
 ```
 
