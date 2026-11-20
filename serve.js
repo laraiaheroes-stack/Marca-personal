@@ -7,7 +7,7 @@ const http = require('http');
 const fs = require('fs');
 const path = require('path');
 
-const PORT = process.env.PORT || 3000;
+let PORT = parseInt(process.env.PORT || process.argv[2] || 3000, 10);
 const BASE_DIR = __dirname;
 
 const MIME_TYPES = {

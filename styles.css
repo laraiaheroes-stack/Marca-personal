@@ -543,6 +543,19 @@ button {
   border: 1px solid #fde68a;
 }
 
+.status-pilot {
+  background-color: #ecfdf5;
+  color: #047857;
+  border: 1px solid #a7f3d0;
+}
+
+.brand-by {
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  margin-left: 0.35rem;
+}
+
 .project-title {
   font-size: 1.35rem;
   font-weight: 700;

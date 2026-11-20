@@ -23,7 +23,11 @@ Pagina Personal/
 │   ├── logo-taskiq-icon.png   # Isotipo oficial de TaskIQ
 │   ├── logo-taskiq-full.jpg   # Logotipo oficial completo de TaskIQ
 │   ├── logo-agendaiq.png      # Logo oficial de AgendaIQ
-│   └── logo-catalogoiq.jpg    # Logo oficial de catalogoIQ
+│   ├── logo-catalogoiq.jpg    # Logo oficial de catalogoIQ
+│   ├── logo-costosiq-symbol.png # Logo oficial de CostosIQ (optimizado)
+│   ├── logo-costosiq-withtext.png # Logo con texto de CostosIQ (optimizado)
+│   ├── CostosIQ_AppIcon_Final_SymbolOnly.png # Recurso gráfico original (alta resolución)
+│   └── CostosIQ_AppIcon_Final_WithText.png   # Recurso gráfico original (alta resolución)
 └── README.md         # Esta guía de uso y personalización
 ```
 
